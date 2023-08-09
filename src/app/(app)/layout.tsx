@@ -1,10 +1,7 @@
-import SideBar from "@/components/SideBar";
+import AppLayout from "@/components/layouts/AppLayout";
 
-export default function AppLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex flex-row">
-      <SideBar />
-      {children}
-    </div>
-  );
-}
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  return <AppLayout>{children}</AppLayout>;
+};
+
+export default Layout;
