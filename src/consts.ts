@@ -1,12 +1,5 @@
 import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
-import {
-  CalendarIcon,
-  ChartPieIcon,
-  DocumentDuplicateIcon,
-  FolderIcon,
-  HomeIcon,
-  UsersIcon,
-} from "@heroicons/react/24/outline";
+import { HomeIcon, UsersIcon } from "@heroicons/react/24/outline";
 
 export type Icon = ForwardRefExoticComponent<
   Omit<SVGProps<SVGSVGElement>, "ref"> & {
