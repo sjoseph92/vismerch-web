@@ -1,3 +1,4 @@
+import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
 import {
   CalendarIcon,
   ChartPieIcon,
@@ -7,16 +8,20 @@ import {
   UsersIcon,
 } from "@heroicons/react/24/outline";
 
-export const navigation = [
-  { name: "Dashboard", href: "#", icon: HomeIcon, current: true },
-  { name: "Team", href: "#", icon: UsersIcon, current: false },
-  { name: "Projects", href: "#", icon: FolderIcon, current: false },
-  { name: "Calendar", href: "#", icon: CalendarIcon, current: false },
-  { name: "Documents", href: "#", icon: DocumentDuplicateIcon, current: false },
-  { name: "Reports", href: "#", icon: ChartPieIcon, current: false },
-];
+export type Icon = ForwardRefExoticComponent<
+  Omit<SVGProps<SVGSVGElement>, "ref"> & {
+    title?: string | undefined;
+    titleId?: string | undefined;
+  } & RefAttributes<SVGSVGElement>
+>;
 
-export const userNavigation = [
-  { name: "Your profile", href: "#" },
-  { name: "Sign out", href: "#" },
+export interface NavigationItem {
+  name: string;
+  href: string;
+  icon: Icon;
+}
+
+export const navigation: NavigationItem[] = [
+  { name: "Home", href: "/home", icon: HomeIcon },
+  { name: "Jobs", href: "/jobs", icon: UsersIcon },
 ];
