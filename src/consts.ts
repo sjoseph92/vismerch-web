@@ -1,5 +1,9 @@
 import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
-import { HomeIcon, UsersIcon } from "@heroicons/react/24/outline";
+import {
+  CalendarDaysIcon,
+  HomeIcon,
+  MapPinIcon,
+} from "@heroicons/react/24/outline";
 
 export type Icon = ForwardRefExoticComponent<
   Omit<SVGProps<SVGSVGElement>, "ref"> & {
@@ -16,5 +20,6 @@ export interface NavigationItem {
 
 export const navigation: NavigationItem[] = [
   { name: "Home", href: "/home", icon: HomeIcon },
-  { name: "Jobs", href: "/jobs", icon: UsersIcon },
+  { name: "Jobs", href: "/jobs", icon: CalendarDaysIcon },
+  { name: "Locations", href: "/locations", icon: MapPinIcon },
 ];
