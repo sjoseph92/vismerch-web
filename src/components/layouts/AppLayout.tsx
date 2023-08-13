@@ -4,7 +4,6 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 import { navigation } from "@/consts";
-import { combineClassNames } from "@/utils";
 import SidebarLink from "./SidebarLink";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
@@ -152,10 +151,7 @@ export default function AppLayout({ children }: { children: React.ReactNode }) {
             />
           </a>
         </div>
-
-        <main className="py-10 lg:pl-72">
-          <div className="px-4 sm:px-6 lg:px-8">{children}</div>
-        </main>
+        {children}
       </div>
     </>
   );
