@@ -19,16 +19,16 @@ const SidebarLink: FC<SidebarLinkProps> = ({ item }) => {
         href={item.href}
         className={combineClassNames(
           isCurrent
-            ? "bg-gray-50 text-indigo-600"
-            : "text-gray-700 hover:text-indigo-600 hover:bg-gray-50",
+            ? "bg-gray-50 text-orange-600"
+            : "text-gray-700 hover:text-orange-600 hover:bg-gray-50",
           "group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold"
         )}
       >
         <item.icon
           className={combineClassNames(
             isCurrent
-              ? "text-indigo-600"
-              : "text-gray-400 group-hover:text-indigo-600",
+              ? "text-orange-600"
+              : "text-gray-400 group-hover:text-orange-600",
             "h-6 w-6 shrink-0"
           )}
           aria-hidden="true"
