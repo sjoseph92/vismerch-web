@@ -3,7 +3,7 @@ import {
   CalendarDaysIcon,
   HomeIcon,
   MapPinIcon,
-  ShoppingBagIcon
+  CubeIcon,
 } from "@heroicons/react/24/outline";
 
 export type Icon = ForwardRefExoticComponent<
@@ -19,10 +19,11 @@ export interface NavigationItem {
   icon: Icon;
 }
 
-export const navigation: NavigationItem[] = [
-  { name: "Home", href: "/home", icon: HomeIcon },
-  { name: "Jobs", href: "/jobs", icon: CalendarDaysIcon },
-  { name: "Locations", href: "/locations", icon: MapPinIcon },
-  { name: "Products", href: "/products", icon: ShoppingBagIcon },
+export const navigationItems: Record<string, NavigationItem> = {
+  "/home": { name: "Home", href: "/home", icon: HomeIcon },
+  "/jobs": { name: "Jobs", href: "/jobs", icon: CalendarDaysIcon },
+  "/locations": { name: "Locations", href: "/locations", icon: MapPinIcon },
+  "/products": { name: "Products", href: "/products", icon: CubeIcon },
+};
 
-];
+export const sideBarOptions = Object.values(navigationItems);
