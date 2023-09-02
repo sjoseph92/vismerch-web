@@ -1,5 +1,5 @@
-import ProductsTable from "@/components/products/ProductsTable";
+import ProductsView from "@/components/products/ProductsView";
 
 export default function Page() {
-  return <ProductsTable />;
+  return <ProductsView />;
 }
