@@ -29,12 +29,13 @@ const currentFile = {
   ],
 };
 
-export default function DetailsSideBar() {
+const DetailsSideBar = () => {
   return (
     <aside className="hidden w-96 overflow-y-auto border-l border-gray-200 bg-white p-8 lg:block">
       <div className="space-y-6 pb-16">
         <div>
           <div className="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
+            {/*eslint-disable-next-line @next/next/no-img-element */}
             <img src={currentFile.source} alt="" className="object-cover" />
           </div>
           <div className="mt-4 flex items-start justify-between">
@@ -101,6 +102,7 @@ export default function DetailsSideBar() {
                 className="flex items-center justify-between py-3"
               >
                 <div className="flex items-center">
+                  {/*eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={person.imageUrl}
                     alt=""
@@ -150,4 +152,6 @@ export default function DetailsSideBar() {
       </div>
     </aside>
   );
-}
+};
+
+export default DetailsSideBar;
