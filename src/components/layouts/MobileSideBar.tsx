@@ -71,6 +71,7 @@ const MobileSideBar: FC<MobileSideBarProps> = ({
               {/* Sidebar component, swap this element with another sidebar if you like */}
               <div className="flex grow flex-col gap-y-5 overflow-y-auto bg-white px-6 pb-2">
                 <div className="flex h-16 shrink-0 items-center">
+                  {/*eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     className="h-8 w-auto"
                     src="https://tailwindui.com/img/logos/mark.svg?color=orange&shade=600"
