@@ -1,24 +1,20 @@
-const people = [
-  {
-    name: "Lindsay Walton",
-    title: "Back-end Developer",
-    email: "lindsay.walton@example.com",
-    role: "Member",
-  },
-  // More people...
-];
+import { Location } from "@/appTypes/locations";
+import { FC } from "react";
 
-export default function LocationsTable() {
+interface LocationsTableProps {
+  locations: Location[];
+}
+
+const LocationsTable: FC<LocationsTableProps> = ({ locations }) => {
   return (
     <div className="px-4 sm:px-6 lg:px-8">
       <div className="sm:flex sm:items-center">
         <div className="sm:flex-auto">
           <h1 className="text-base font-semibold leading-6 text-gray-900">
-            Users
+            Locations
           </h1>
           <p className="mt-2 text-sm text-gray-700">
-            A list of all the users in your account including their name, title,
-            email and role.
+            A list of all the locations in your account
           </p>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -26,7 +22,7 @@ export default function LocationsTable() {
             type="button"
             className="block rounded-md bg-orange-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600"
           >
-            Add user
+            Add location
           </button>
         </div>
       </div>
@@ -46,19 +42,25 @@ export default function LocationsTable() {
                     scope="col"
                     className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                   >
-                    Title
+                    Brand
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                   >
-                    Email
+                    City
                   </th>
                   <th
                     scope="col"
                     className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
                   >
-                    Role
+                    State
+                  </th>
+                  <th
+                    scope="col"
+                    className="px-3 py-3.5 text-left text-sm font-semibold text-gray-900"
+                  >
+                    Zip Code
                   </th>
                   <th scope="col" className="relative py-3.5 pl-3 pr-4 sm:pr-0">
                     <span className="sr-only">Edit</span>
@@ -66,26 +68,29 @@ export default function LocationsTable() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-200">
-                {people.map((person) => (
-                  <tr key={person.email}>
+                {locations.map((location) => (
+                  <tr key={location.id}>
                     <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                      {person.name}
+                      {location.name}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {person.title}
+                      {location.brand}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {person.email}
+                      {location.city}
                     </td>
                     <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                      {person.role}
+                      {location.state}
+                    </td>
+                    <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
+                      {location.zipCode}
                     </td>
                     <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a
                         href="#"
                         className="text-orange-600 hover:text-orange-900"
                       >
-                        Edit<span className="sr-only">, {person.name}</span>
+                        Edit<span className="sr-only">, {location.name}</span>
                       </a>
                     </td>
                   </tr>
@@ -97,4 +102,6 @@ export default function LocationsTable() {
       </div>
     </div>
   );
-}
+};
+
+export default LocationsTable;
