@@ -7,6 +7,7 @@ const currentFile = {
   source:
     "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
   information: {
+    key: "IMG_4985.HEIC",
     "Uploaded by": "Marie Culver",
     Created: "June 8, 2020",
     "Last modified": "June 8, 2020",
@@ -68,7 +69,7 @@ const DetailsSideBar = () => {
               >
                 <dt className="text-gray-500">{key}</dt>
                 <dd className="whitespace-nowrap text-gray-900">
-                  {currentFile.information[key]}
+                  {currentFile.information.key}
                 </dd>
               </div>
             ))}
