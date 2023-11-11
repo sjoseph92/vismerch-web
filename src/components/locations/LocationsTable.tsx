@@ -1,4 +1,4 @@
-import { Location } from "@/appTypes/locations";
+import { Location } from "@/schemas/locations";
 import { FC } from "react";
 
 interface LocationsTableProps {
