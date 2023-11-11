@@ -4,6 +4,7 @@ import {
   HomeIcon,
   MapPinIcon,
   CubeIcon,
+  UserGroupIcon
 } from "@heroicons/react/24/outline";
 
 export type Icon = ForwardRefExoticComponent<
@@ -24,6 +25,7 @@ export const navigationItems: Record<string, NavigationItem> = {
   "/jobs": { name: "Jobs", href: "/jobs", icon: CalendarDaysIcon },
   "/locations": { name: "Locations", href: "/locations", icon: MapPinIcon },
   "/products": { name: "Products", href: "/products", icon: CubeIcon },
+  "/team": { name: "Team", href: "/team", icon: UserGroupIcon },
 };
 
 export const sideBarOptions = Object.values(navigationItems);
