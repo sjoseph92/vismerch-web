@@ -15,3 +15,15 @@ export const insertUser = async (name: string, email: string, hash: string) => {
     throw err;
   }
 };
+
+export const selectUserByEmail = async (email: string) => {
+  try {
+    const selectResults = await pool.query<DBUser>(
+      "SELECT * FROM users WHERE email = $1",
+      [email]
+    );
+    return selectResults.rows?.[0];
+  } catch (err) {
+    throw err;
+  }
+};
