@@ -14,6 +14,7 @@
     "@heroicons/react": "^2.0.18",
     "autoprefixer": "10.4.14",
     "bcrypt": "^5.1.1",
+    "dns2": "^2.1.0",
     "eslint": "8.46.0",
     "eslint-config-next": "13.4.12",
     "next": "^14.0.1",
@@ -29,6 +30,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.5.4",
     "@types/bcrypt": "^5.0.2",
+    "@types/dns2": "^2.0.8",
     "@types/google.maps": "^3.53.6",
     "@types/node": "^20.9.0",
     "@types/pg": "^8.10.2",
