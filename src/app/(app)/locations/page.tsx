@@ -1,16 +1,15 @@
-import { Location } from "@/schemas/locations";
 import LocationsTable from "@/components/locations/LocationsTable";
 import { Suspense } from "react";
+import { selectCompanyLocationsByCompanyId } from "@/db/locations";
+import { convertDBLocationToLocation } from "@/utils/dbTypeConverters";
 
 async function getData() {
-  const res = await fetch("http://localhost:4200/locations");
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
+  const dbLocations = await selectCompanyLocationsByCompanyId(1);
+  const locations = dbLocations.map((dbLocation) =>
+    convertDBLocationToLocation(dbLocation)
+  );
 
-  const locationResponse = (await res.json()) as APIResponse<Location[]>;
-
-  return locationResponse.data;
+  return locations;
 }
 
 export default async function Page() {
