@@ -1,5 +1,5 @@
 import { pool } from ".";
-import { DBUser } from "@/types/nextAuthDBTypes";
+import { DBUser } from "@/types/nextAuth";
 
 export const insertUser = async (name: string, email: string, hash: string) => {
   try {

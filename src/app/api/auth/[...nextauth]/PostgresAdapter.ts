@@ -1,4 +1,4 @@
-import { DBAccount, DBSession, DBUser } from "@/types/nextAuthDBTypes";
+import { DBAccount, DBSession, DBUser } from "@/types/nextAuth";
 import {
   convertDBAccountToAdapterAccount,
   convertDBSessionToAdapterSession,

@@ -5,7 +5,7 @@ import {
 } from "next-auth/adapters";
 
 
-import { DBAccount, DBSession, DBUser } from "@/types/nextAuthDBTypes";
+import { DBAccount, DBSession, DBUser } from "@/types/nextAuth";
 
 export const convertDBSessionToAdapterSession = (
   dbSession: DBSession
