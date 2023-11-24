@@ -1,5 +1,3 @@
-import { PlusCircleIcon, PencilIcon } from "@heroicons/react/24/outline";
-
 import DetailsSideBar from "./DetailsSideBar";
 import ProductsGallery from "./ProductsGallery";
 import PageHeader from "./PageHeader";

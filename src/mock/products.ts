@@ -14,6 +14,7 @@ export const products = [
     gtin: "709586514894",
     type: "GTIN-12",
     basePrice: "$2.49",
+    current: false,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const products = [
     gtin: "709586514856",
     type: "GTIN-12",
     basePrice: "$2.49",
+    current: false,
   },
   {
     id: 3,
@@ -30,6 +32,7 @@ export const products = [
     gtin: "810063710309",
     type: "GTIN-12",
     basePrice: "$2.49",
+    current: false,
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const products = [
     gtin: "724190812877",
     type: "GTIN-12",
     basePrice: "$2.49",
+    current: false,
   },
   {
     id: 5,
@@ -46,6 +50,7 @@ export const products = [
     gtin: "810063710064",
     type: "GTIN-12",
     basePrice: "$8.99",
+    current: false,
   },
   {
     id: 6,
@@ -54,5 +59,6 @@ export const products = [
     gtin: "810063710279",
     type: "GTIN-12",
     basePrice: "$8.99",
+    current: false
   },
 ];
