@@ -1,4 +1,4 @@
-import { string, ZodType, nativeEnum, object } from "zod";
+import { string, ZodType, nativeEnum, object, number } from "zod";
 
 export enum GTINEnum {
   GTIN8 = "GTIN-8",
@@ -17,19 +17,21 @@ export const gtinTypes = [
 ];
 
 export interface Product {
+  id: number;
   name: string;
   gtin: string;
   gtinType: GTINEnum;
-  price: string;
+  basePrice: string;
   description?: string;
   image?: string;
 }
 
 export const productSchema: ZodType<Product> = object({
+  id: number(),
   name: string(),
   gtin: string(),
   gtinType: gtinEnumSchema,
-  price: string(),
+  basePrice: string(),
   description: string().optional(),
   image: string().optional(),
 });
