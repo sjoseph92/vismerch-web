@@ -10,7 +10,7 @@ interface SidebarLinkProps {
   item: NavigationItem;
 }
 
-const SidebarLink: FC<SidebarLinkProps> = ({ item }) => {
+const SideBarLink: FC<SidebarLinkProps> = ({ item }) => {
   const pathname = usePathname();
   const isCurrent = item.href === pathname;
   return (
@@ -39,4 +39,4 @@ const SidebarLink: FC<SidebarLinkProps> = ({ item }) => {
   );
 };
 
-export default SidebarLink;
+export default SideBarLink;

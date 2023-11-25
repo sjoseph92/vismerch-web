@@ -1,4 +1,4 @@
-interface RouteParams<T> {
+export interface RouteParams<T> {
   params: T;
 }
 

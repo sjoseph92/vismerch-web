@@ -15,3 +15,13 @@ export const useMobileHeaderTitle = () => {
 
   return title;
 };
+
+export const useIsParentPage = () => {
+  const path = usePathname();
+
+  const isParentPage = useMemo(() => {
+    return path.split("/").length === 2;
+  }, [path]);
+
+  return isParentPage;
+};

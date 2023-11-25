@@ -4,7 +4,7 @@ import { Dialog, Transition } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
 import { sideBarOptions } from "@/consts";
-import SidebarLink from "./SidebarLink";
+import SideBarLink from "./SideBarLink";
 
 interface MobileSideBarProps {
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
@@ -83,7 +83,7 @@ const MobileSideBar: FC<MobileSideBarProps> = ({
                     <li>
                       <ul role="list" className="-mx-2 space-y-1">
                         {sideBarOptions.map((item) => (
-                          <SidebarLink item={item} key={item.name} />
+                          <SideBarLink item={item} key={item.name} />
                         ))}
                       </ul>
                     </li>
