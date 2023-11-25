@@ -8,7 +8,7 @@ const pages = [
 const Breadcrumbs = () => {
   return (
     <nav className="flex" aria-label="Breadcrumb">
-      <ol role="list" className="flex items-center space-x-2">
+      <ol role="list" className="flex items-center space-x-1 lg:space-x-2">
         <li>
           <a
             href="/locations"

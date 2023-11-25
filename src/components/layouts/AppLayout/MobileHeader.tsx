@@ -3,7 +3,7 @@ import { Dispatch, FC, SetStateAction } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 
-import { useMobileHeaderTitle } from "./utils";
+import { useIsParentPage, useMobileHeaderTitle } from "./utils";
 
 interface MobileHeaderProps {
   setSidebarOpen: Dispatch<SetStateAction<boolean>>;
@@ -12,6 +12,11 @@ interface MobileHeaderProps {
 const MobileHeader: FC<MobileHeaderProps> = ({ setSidebarOpen }) => {
   const title = useMobileHeaderTitle();
   const onClick = () => setSidebarOpen(true);
+  const isParentPage = useIsParentPage();
+  if (!isParentPage) {
+    return null;
+  }
+  
   return (
     <div className="sticky top-0 z-40 flex items-center gap-x-6 bg-white px-4 py-4 shadow-sm sm:px-6 lg:hidden">
       <button
