@@ -1,10 +1,10 @@
 import { combineClassNames } from "@/utils";
 
 const tabs = [
-  { name: "My Account", href: "#", current: false },
-  { name: "Company", href: "#", current: false },
-  { name: "Team Members", href: "#", current: true },
-  { name: "Billing", href: "#", current: false },
+  { name: "Overview", href: "#", current: false },
+  { name: "Inventory", href: "#", current: false },
+  { name: "Photos", href: "#", current: true },
+  { name: "Job History", href: "#", current: false },
 ];
 
 export default function Tabs() {
@@ -19,7 +19,7 @@ export default function Tabs() {
           id="tabs"
           name="tabs"
           className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-orange-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
-          defaultValue={tabs.find((tab) => tab.current).name}
+          defaultValue={tabs?.find((tab) => tab.current)?.name}
         >
           {tabs.map((tab) => (
             <option key={tab.name}>{tab.name}</option>
