@@ -2,8 +2,8 @@ import { combineClassNames } from "@/utils";
 
 const tabs = [
   { name: "Overview", href: "#", current: false },
-  { name: "Inventory", href: "#", current: false },
-  { name: "Photos", href: "#", current: true },
+  { name: "Inventory", href: "#", current: true },
+  { name: "Photos", href: "#", current: false },
   { name: "Job History", href: "#", current: false },
 ];
 
