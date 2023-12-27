@@ -1,23 +1,15 @@
-import { ForwardRefExoticComponent, RefAttributes, SVGProps } from "react";
 import {
   CalendarDaysIcon,
   HomeIcon,
   MapPinIcon,
   CubeIcon,
-  UserGroupIcon
+  UserGroupIcon,
 } from "@heroicons/react/24/outline";
-
-export type Icon = ForwardRefExoticComponent<
-  Omit<SVGProps<SVGSVGElement>, "ref"> & {
-    title?: string | undefined;
-    titleId?: string | undefined;
-  } & RefAttributes<SVGSVGElement>
->;
 
 export interface NavigationItem {
   name: string;
   href: string;
-  icon: Icon;
+  icon: HeroIconType;
 }
 
 export const navigationItems: Record<string, NavigationItem> = {
