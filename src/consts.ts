@@ -13,7 +13,7 @@ export interface NavigationItem {
 }
 
 export const navigationItems: Record<string, NavigationItem> = {
-  "/home": { name: "Home", href: "/home", icon: HomeIcon },
+  "/home": { name: "Home", href: "/", icon: HomeIcon },
   "/jobs": { name: "Jobs", href: "/jobs", icon: CalendarDaysIcon },
   "/locations": { name: "Locations", href: "/locations", icon: MapPinIcon },
   "/products": { name: "Products", href: "/products", icon: CubeIcon },

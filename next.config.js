@@ -7,15 +7,6 @@ const nextConfig = {
       "mockproducts.s3.amazonaws.com",
     ],
   },
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/jobs",
-        permanent: true,
-      },
-    ];
-  },
 };
 
 module.exports = nextConfig;

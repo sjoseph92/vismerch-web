@@ -27,6 +27,6 @@ function Map({ address }: { address: string }) {
       })();
     }
   }, [address]);
-  return <div id="map" className="h-screen m-0 p-0" />;
+  return <div id="map" className="w-full h-48" />;
 }
 export default Map;

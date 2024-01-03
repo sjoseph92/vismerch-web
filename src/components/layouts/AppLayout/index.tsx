@@ -9,7 +9,7 @@ const AppLayout: FC<PropsWithChildren> = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
-      <div>
+      <div className="bg-white">
         <MobileSideBar
           sidebarOpen={sidebarOpen}
           setSidebarOpen={setSidebarOpen}
