@@ -1,5 +1,6 @@
 import { Location } from "@/types/location";
 import { FC } from "react";
+import LocationsTableRow from "./LocationsTableRow";
 
 interface LocationsTableProps {
   locations: Location[];
@@ -74,32 +75,10 @@ const LocationsTable: FC<LocationsTableProps> = ({ locations }) => {
                   </thead>
                   <tbody className="divide-y divide-gray-200">
                     {locations.map((location) => (
-                      <tr key={location.id}>
-                        <td className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 sm:pl-0">
-                          {location.name}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {location.brand}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {location.city}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {location.state}
-                        </td>
-                        <td className="whitespace-nowrap px-3 py-4 text-sm text-gray-500">
-                          {location.zipCode}
-                        </td>
-                        <td className="relative whitespace-nowrap py-4 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
-                          <a
-                            href="#"
-                            className="text-orange-600 hover:text-orange-900"
-                          >
-                            Edit
-                            <span className="sr-only">, {location.name}</span>
-                          </a>
-                        </td>
-                      </tr>
+                      <LocationsTableRow
+                        location={location}
+                        key={location.id}
+                      />
                     ))}
                   </tbody>
                 </table>

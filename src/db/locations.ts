@@ -28,3 +28,31 @@ export const selectCompanyLocationsByCompanyId = async (companyId: number) => {
     throw err;
   }
 };
+
+export const selectLocationByLocationId = async (locationId: number) => {
+  try {
+    const selectResults = await pool.query<DBLocation>(
+      `
+        SELECT
+            id,
+            name,
+            brand,
+            address_line_1,
+            address_line_2,
+            city,
+            state,
+            zip_code,
+            ST_AsGeoJSON (ST_Transform (coordinate, 4326)) as geo_json
+        FROM
+            locations
+        WHERE
+            id = $1;
+      `,
+      [locationId]
+    );
+    return selectResults.rows?.[0];
+  } catch (err) {
+    throw err;
+  }
+};
+

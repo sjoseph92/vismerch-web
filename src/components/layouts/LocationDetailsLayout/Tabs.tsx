@@ -1,11 +1,5 @@
-import { combineClassNames } from "@/utils";
-
-const tabs = [
-  { name: "Overview", href: "#", current: false },
-  { name: "Inventory", href: "#", current: true },
-  { name: "Photos", href: "#", current: false },
-  { name: "Job History", href: "#", current: false },
-];
+import { LOCATION_DETAIL_TABS } from "@/consts";
+import TabItem from "./TabItem";
 
 export default function Tabs() {
   return (
@@ -18,10 +12,10 @@ export default function Tabs() {
         <select
           id="tabs"
           name="tabs"
-          className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base focus:border-orange-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
-          defaultValue={tabs?.find((tab) => tab.current)?.name}
+          className="block w-full rounded-md border-gray-300 py-2 pl-3 pr-10 text-base text-black focus:border-orange-500 focus:outline-none focus:ring-orange-500 sm:text-sm"
+          defaultValue={""}
         >
-          {tabs.map((tab) => (
+          {LOCATION_DETAIL_TABS.map((tab) => (
             <option key={tab.name}>{tab.name}</option>
           ))}
         </select>
@@ -29,20 +23,8 @@ export default function Tabs() {
       <div className="hidden sm:block">
         <div className="border-b border-gray-200">
           <nav className="-mb-px flex space-x-8" aria-label="Tabs">
-            {tabs.map((tab) => (
-              <a
-                key={tab.name}
-                href={tab.href}
-                className={combineClassNames(
-                  tab.current
-                    ? "border-orange-500 text-orange-600"
-                    : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
-                  "whitespace-nowrap border-b-2 py-4 px-1 text-sm font-medium"
-                )}
-                aria-current={tab.current ? "page" : undefined}
-              >
-                {tab.name}
-              </a>
+            {LOCATION_DETAIL_TABS.map((tab) => (
+              <TabItem tab={tab} key={tab.name} />
             ))}
           </nav>
         </div>
