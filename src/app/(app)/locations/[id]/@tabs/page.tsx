@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { RouteParams } from "@/types/routes";
-import LocationDetailsCard from "@/components/locations/details/Overview/LocationDetailsCard";
-import OverviewBottomRow from "@/components/locations/details/Overview/OverviewBottomRow";
+import LocationDetailsCard from "@/components/locations/details/overview/LocationDetailsCard";
+import OverviewBottomRow from "@/components/locations/details/overview/OverviewBottomRow";
 import { getLocation } from "@/actions/locations";
 
 type LocationDetailsPageRoute = RouteParams<{ id: number }>;

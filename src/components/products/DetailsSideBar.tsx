@@ -1,8 +1,19 @@
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { PencilIcon, PlusIcon } from "@heroicons/react/20/solid";
+import { GTINEnum } from "@/types/product";
+import rasberryRosePoppiCan from "@/public/rasberry-rose-poppi-can.webp";
+import publixLogo from "@/public/publix-logo.svg";
+import walgreensLogo from "@/public/walgreens-logo.svg";
+import Image from "next/image";
 
 const currentFile = {
-  name: "IMG_4985.HEIC",
+  id: 1,
+  name: "Poppi Raspberry Rose Prebiotic Soda - 12 fl oz Can",
+  image: rasberryRosePoppiCan,
+  gtin: "709586514894",
+  gtinType: GTINEnum.GTIN12,
+  basePrice: "$2.49",
+  current: false,
   size: "3.9 MB",
   source:
     "https://images.unsplash.com/photo-1582053433976-25c00369fc93?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=512&q=80",
@@ -17,15 +28,15 @@ const currentFile = {
   sharedWith: [
     {
       id: 1,
-      name: "Aimee Douglas",
-      imageUrl:
-        "https://images.unsplash.com/photo-1502685104226-ee32379fefbe?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=3&w=1024&h=1024&q=80",
+      name: "Publix",
+      imageUrl: publixLogo.src,
+      storeCount: 567
     },
     {
       id: 2,
-      name: "Andrea McMillan",
-      imageUrl:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixqx=oilqXxSqey&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+      name: "Walgreens",
+      storeCount: 784,
+      imageUrl: walgreensLogo.src,
     },
   ],
 };
@@ -37,7 +48,7 @@ const DetailsSideBar = () => {
         <div>
           <div className="aspect-h-7 aspect-w-10 block w-full overflow-hidden rounded-lg">
             {/*eslint-disable-next-line @next/next/no-img-element */}
-            <img src={currentFile.source} alt="" className="object-cover" />
+            <img src={currentFile.image.src} alt="" className="object-cover" />
           </div>
           <div className="mt-4 flex items-start justify-between">
             <div>
@@ -46,22 +57,31 @@ const DetailsSideBar = () => {
                 {currentFile.name}
               </h2>
               <p className="text-sm font-medium text-gray-500">
-                {currentFile.size}
+                {currentFile.gtin}
               </p>
             </div>
-            <button
-              type="button"
-              className="relative ml-4 flex h-8 w-8 items-center justify-center rounded-full bg-white text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-500"
-            >
-              <span className="absolute -inset-1.5" />
-              <HeartIcon className="h-6 w-6" aria-hidden="true" />
-              <span className="sr-only">Favorite</span>
-            </button>
           </div>
         </div>
         <div>
           <h3 className="font-medium text-gray-900">Information</h3>
           <dl className="mt-2 divide-y divide-gray-200 border-b border-t border-gray-200">
+            <div className="flex justify-between py-3 text-sm font-medium">
+              <dt className="text-gray-500">Store count</dt>
+              <dd className="whitespace-nowrap text-gray-900">
+                {Number(3799).toLocaleString()}
+              </dd>
+            </div>
+            <div className="flex justify-between py-3 text-sm font-medium">
+              <dt className="text-gray-500">Number of facings</dt>
+              <dd className="whitespace-nowrap text-gray-900">64</dd>
+            </div>
+            <div className="flex justify-between py-3 text-sm font-medium">
+              <dt className="text-gray-500">Total units replenished</dt>
+              <dd className="whitespace-nowrap text-gray-900">
+                {Number(7569).toLocaleString()}
+              </dd>
+            </div>
+
             {Object.keys(currentFile.information).map((key) => (
               <div
                 key={key}
@@ -69,7 +89,7 @@ const DetailsSideBar = () => {
               >
                 <dt className="text-gray-500">{key}</dt>
                 <dd className="whitespace-nowrap text-gray-900">
-                  {currentFile.information.key}
+                  {currentFile.information[key]}
                 </dd>
               </div>
             ))}
@@ -103,22 +123,21 @@ const DetailsSideBar = () => {
                 className="flex items-center justify-between py-3"
               >
                 <div className="flex items-center">
-                  {/*eslint-disable-next-line @next/next/no-img-element */}
-                  <img
+                  <Image
+                    height={40}
+                    width={40}
                     src={person.imageUrl}
                     alt=""
-                    className="h-8 w-8 rounded-full"
+                    className="h-10 w-10 rounded-full object-contain"
                   />
-                  <p className="ml-4 text-sm font-medium text-gray-900">
+                  <p className="ml-4 text-sm font-medium text-gray-500">
                     {person.name}
                   </p>
                 </div>
-                <button
-                  type="button"
-                  className="ml-6 rounded-md bg-white text-sm font-medium text-orange-600 hover:text-orange-500 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
-                >
-                  Remove<span className="sr-only"> {person.name}</span>
-                </button>
+              
+                <p className="ml-4 text-sm font-medium text-gray-900">
+                    {person.storeCount}
+                  </p>
               </li>
             ))}
             <li className="flex items-center justify-between py-2">

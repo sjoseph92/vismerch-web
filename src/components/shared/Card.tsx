@@ -1,8 +1,16 @@
 import { FC, PropsWithChildren } from "react";
 
-const Card: FC<PropsWithChildren> = ({ children }) => {
+interface CardProps extends PropsWithChildren {
+  withPadding?: boolean;
+}
+
+const Card: FC<CardProps> = ({ children, withPadding = true }) => {
   return (
-    <div className="overflow-hidden rounded-lg bg-white px-4 py-5 shadow sm:p-6 mx-3 sm:mx-0">
+    <div
+      className={`overflow-hidden rounded-lg bg-white shadow mx-3 sm:mx-0 ${
+        withPadding ? "px-4 py-5 sm:px-6" : undefined
+      }`}
+    >
       {children}
     </div>
   );
