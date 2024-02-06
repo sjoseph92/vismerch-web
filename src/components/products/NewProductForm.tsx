@@ -2,11 +2,10 @@ import { UserCircleIcon } from "@heroicons/react/24/solid";
 
 import { gtinTypes } from "@/types/product";
 import FormWrapper from "../forms/FormWrapper";
-import { createNewProduct } from "@/actions/createNewProduct";
 
 const NewProductForm = () => {
   return (
-    <FormWrapper action={createNewProduct} title="Add Product">
+    <FormWrapper action={() => null} title="Add Product">
       <div className="col-span-full">
         <label
           htmlFor="photo"
