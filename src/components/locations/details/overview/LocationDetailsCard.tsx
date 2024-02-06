@@ -29,7 +29,15 @@ const LocationDetailsCard: FC<LocationDetailsCardProps> = ({ location }) => {
           <dl className="grid grid-cols-1 sm:grid-cols-2">
             <div className="border-t border-gray-100 px-4 py-6 sm:col-span-1 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">
-                Street Address
+                Brand
+              </dt>
+              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
+                {location.brand}
+              </dd>
+            </div>
+            <div className="border-t border-gray-100 px-4 py-6 sm:col-span-1 sm:px-0">
+              <dt className="text-sm font-medium leading-6 text-gray-900">
+                Street address
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
                 {location.addressLine1}
@@ -40,23 +48,16 @@ const LocationDetailsCard: FC<LocationDetailsCardProps> = ({ location }) => {
                 City, State
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
-                Backend Developer
+                {`${location.city}, ${location.state}`}
               </dd>
             </div>
+            
             <div className="border-t border-gray-100 px-4 py-6 sm:col-span-1 sm:px-0">
               <dt className="text-sm font-medium leading-6 text-gray-900">
-                Email address
+                Zip code
               </dt>
               <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
-                margotfoster@example.com
-              </dd>
-            </div>
-            <div className="border-t border-gray-100 px-4 py-6 sm:col-span-1 sm:px-0">
-              <dt className="text-sm font-medium leading-6 text-gray-900">
-                Salary expectation
-              </dt>
-              <dd className="mt-1 text-sm leading-6 text-gray-700 sm:mt-2">
-                $120,000
+                {location.zipCode}
               </dd>
             </div>
           </dl>
