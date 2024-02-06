@@ -1,9 +1,11 @@
-import { FC } from "react";
+import { ButtonHTMLAttributes, FC } from "react";
 
-interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   Icon?: HeroIconType;
   label: string;
+  color: 'orange' | 'slate' | 'blue'
 }
+
 const Button: FC<ButtonProps> = ({ Icon, label }) => {
   return (
     <button
